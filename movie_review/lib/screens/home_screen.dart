@@ -15,7 +15,10 @@ class HomeScreen extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           child: Column(
-            children: const [CardSwiper(), MovieSlider()],
+            children: const [
+              CardSwiper(),
+              MovieSlider(),
+            ],
           ),
         ));
   }

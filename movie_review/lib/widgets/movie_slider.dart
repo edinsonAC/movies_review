@@ -5,10 +5,9 @@ class MovieSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
-      height: 250,
-      color: Colors.red,
+      height: 260,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -39,8 +38,33 @@ class _MoviePoster extends StatelessWidget {
     return Container(
       width: 130,
       height: 190,
-      color: Colors.green,
-      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 10),
+      child: Column(
+        children: [
+          GestureDetector(
+            onTap: () => Navigator.pushNamed(context, 'details',
+                arguments: 'movie-instance'),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: const FadeInImage(
+                  width: 130,
+                  height: 190,
+                  fit: BoxFit.cover,
+                  placeholder: AssetImage('assets/no-image.jpg'),
+                  image: NetworkImage('https://via.placeholder.com/300x400')),
+            ),
+          ),
+          const SizedBox(
+            height: 5,
+          ),
+          const Text(
+            'Starears y las personas odiosas mas ayudamee',
+            overflow: TextOverflow.ellipsis,
+            maxLines: 2,
+            textAlign: TextAlign.center,
+          )
+        ],
+      ),
     );
   }
 }
