@@ -14,7 +14,9 @@ class HomeScreen extends StatelessWidget {
           elevation: 0,
           actions: [
             IconButton(
-                onPressed: () {}, icon: const Icon(Icons.search_outlined))
+                onPressed: () => showSearch(
+                    context: context, delegate: MovieSearchDelegate()),
+                icon: const Icon(Icons.search_outlined))
           ],
         ),
         body: SingleChildScrollView(
